@@ -1,0 +1,230 @@
+/* Varsayılan stilleri sıfırlama */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fontu ayarlıyoruz */
+body {
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  font-size: large;
+}
+
+/* "Bugüne Git" butonu stilleri ve animasyonları */
+.my-perfect-button {
+  display: inline-block;
+  padding: 0.7rem 2.5rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.my-perfect-button:hover::after {
+  transform: scaleX(1.5) scaleY(1.5);
+  opacity: 0;
+}
+
+.my-perfect-button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.4s;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  background-color: #313131;
+  border-radius: 10rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.my-perfect-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.my-perfect-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+/* Main - Flexbox yapısını oluşturuyoruz. */
+.my-container {
+  height: 100%;
+  display: flex;
+}
+
+/* Takvim alanı stilleri */
+.my-left {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.my-left .my-month {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.my-left .my-month h5 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #747978;
+}
+
+.my-left .my-month h5 i {
+  cursor: pointer;
+  line-height: 1.5rem;
+}
+
+.my-left .my-month h5 .fa-chevron-right {
+  font-size: 1rem;
+  margin-left: 1.5rem;
+  transition: all 0.2s;
+}
+.my-left .my-month h5 .fa-chevron-left {
+  font-size: 1rem;
+  margin-right: 1.5rem;
+  transition: all 0.2s;
+}
+
+.my-left .my-month h5 .fa-chevron-left:hover {
+  transform: scale(1.2);
+}
+
+.my-left .my-month h5 .fa-chevron-left:active {
+  transform: scale(1);
+}
+
+.my-left .my-month h5 .fa-chevron-right:hover {
+  transform: scale(1.2);
+}
+
+.my-left .my-month h5 .fa-chevron-right:active {
+  transform: scale(1);
+}
+
+/* Notlar alanı stilleri */
+.my-right {
+  width: 40%;
+  background-color: #004c4c;
+  box-shadow: -10px -8px 10px 1px #aaaaaa;
+}
+
+.my-right .my-content {
+  padding: 40px;
+}
+
+.my-right .my-date {
+  color: #fff;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 26px;
+}
+
+.my-right .my-content .my-input-wrapper {
+  margin-top: 3rem;
+}
+
+.my-right .my-content .my-input-wrapper input {
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  outline: none;
+  color: #b2d8d8;
+  background: none;
+  border-radius: 6px;
+  border: 1.2px solid #747978;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.my-right .my-content .my-input-wrapper input::placeholder {
+  color: #b2d8d8;
+}
+
+.my-right .my-content .my-input-wrapper input:focus {
+  border-color: #04886b;
+  border: 2px solid #04886b;
+  box-shadow: 5rem 5rem 10rem #004c4c;
+}
+
+/* Takvim stilleri */
+table th {
+  padding: 1.3rem 2.5rem;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 400;
+  color: #747978;
+}
+
+table td {
+  padding: 1.3rem 2.5rem;
+  text-align: left;
+}
+
+table tr td span {
+  position: relative;
+  border-radius: 30%;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  text-align: center;
+  line-height: 35px;
+  cursor: pointer;
+  color: #747978;
+  font-weight: bold;
+  font-size: 14px;
+  user-select: none;
+  transition: all 0.2s;
+}
+
+.my-hover {
+  background-color: #74797831;
+  box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+table tr td span:hover {
+  background-color: #74797831;
+  box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+table tr td span:active {
+  background-color: #74797831;
+  box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.card:hover {
+  opacity: 0.9;
+}
+
+/* Özelleştirilmiş scrollbar */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(160, 158, 158);
+}
